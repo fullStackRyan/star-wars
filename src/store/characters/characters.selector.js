@@ -1,1 +1,1 @@
-export const selectCurrentCharacters = (state) => state.reducer.characters;
+export const selectCurrentCharacters = (state) => state.characters;

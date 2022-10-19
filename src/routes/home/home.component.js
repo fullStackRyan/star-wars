@@ -26,13 +26,14 @@ const Home = () => {
     setPage(page - 1);
   };
 
+  const fetchStarWarsInfo = async () => {
+    const response = await getData(
+      `https://swapi.dev/api/people/?page=${dontReturnZero(page)}`
+    );
+    dispatch(setCurrentCharacters(response.results));
+  };
+
   useEffect(() => {
-    const fetchStarWarsInfo = async () => {
-      const response = await getData(
-        `https://swapi.dev/api/people/?page=${dontReturnZero(page)}`
-      );
-      dispatch(setCurrentCharacters(response.results));
-    };
     fetchStarWarsInfo();
   }, [page]);
 

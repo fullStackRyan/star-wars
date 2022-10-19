@@ -23,3 +23,5 @@ export const charactersSlice = createSlice({
 });
 
 export const { setCurrentCharacters, sortByMass } = charactersSlice.actions;
+
+export default charactersSlice.reducer;
