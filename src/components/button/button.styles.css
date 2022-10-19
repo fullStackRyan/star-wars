@@ -1,0 +1,25 @@
+.button-container {
+  text-transform: uppercase;
+  width: auto;
+  min-width: 150px;
+  height: 150px;
+  font-size: 12px;
+  padding: 0 35px 0 35px;
+  letter-spacing: 0.5px;
+  background-color: #ffe81f;
+  color: #000;
+  font-weight: bolder;
+  cursor: pointer;
+  border: #000 solid 10px;
+  border-radius: 50%;
+}
+
+.disabled {
+  border: red solid 10px;
+  cursor: not-allowed;
+}
+
+.not-disabled {
+  border: green solid 10px;
+  cursor: pointer;
+}
