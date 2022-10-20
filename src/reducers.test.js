@@ -1,4 +1,7 @@
-import { setCurrentCharacters } from "./store/characters/characters.slice";
+import {
+  setCurrentCharacters,
+  sortByMass,
+} from "./store/characters/characters.slice";
 import { store } from "./store/store";
 
 const testData = {

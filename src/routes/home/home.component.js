@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../components/button/button.component";
 import CardList from "../../components/card-list/card-list.component";
-import { getData } from "../../utils/data.utils";
+import { fetchStarWarsInfo } from "../../utils/data.utils";
 import { useParams, useNavigate } from "react-router-dom";
 import PageNumber from "../../components/page-number/page-number.component";
 import "./home.styles.css";
@@ -16,7 +16,7 @@ const Home = () => {
   const [page, setPage] = useState(parseInt(id));
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const dontReturnZero = (pageNumber) => (pageNumber === 0 ? 1 : page);
+
   const incrementPage = () => {
     navigate(`/characters/${page + 1}`);
     setPage(page + 1);
@@ -26,16 +26,11 @@ const Home = () => {
     setPage(page - 1);
   };
 
-  const fetchStarWarsInfo = async () => {
-    const response = await getData(
-      `https://swapi.dev/api/people/?page=${dontReturnZero(page)}`
-    );
-    dispatch(setCurrentCharacters(response.results));
-  };
-
   useEffect(() => {
-    fetchStarWarsInfo();
-  }, [page]);
+    fetchStarWarsInfo(page).then((data) =>
+      dispatch(setCurrentCharacters(data.results))
+    );
+  }, [page, dispatch]);
 
   return (
     <div>
