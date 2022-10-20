@@ -1,4 +1,4 @@
-# Star-Wars Carousel 
+# Star-Wars Carousel (work-in-progress)
 
 <p>This project was made as part of a interview coding challenge.</p>
 
