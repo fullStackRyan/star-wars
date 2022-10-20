@@ -18,11 +18,11 @@ const Home = () => {
   const navigate = useNavigate();
   const dontReturnZero = (pageNumber) => (pageNumber === 0 ? 1 : page);
   const incrementPage = () => {
-    navigate(`/${page + 1}`);
+    navigate(`/characters/${page + 1}`);
     setPage(page + 1);
   };
   const decrementPage = () => {
-    navigate(`/${page - 1}`);
+    navigate(`/characters/${page - 1}`);
     setPage(page - 1);
   };
 
